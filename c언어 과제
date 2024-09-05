@@ -1,41 +1,36 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-  GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-  C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS
-  Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
 #include <stdio.h>
 
 int main()
 {
-   int a = 0;
-   int b[5];
-   int c[5];
-   int d = 0;
-   
-   printf("상품 개수 입력");
-   scanf("%d",&a);
-   
-   printf("입고수량 입력");
-   for(int i = 0;i<5;i++){
-       scanf("%d",&b[i]);
-   }
-   
-   printf("판매수량 입력");
-   for(int i = 0;i<5;i++){
-       scanf("%d",&c[i]);
-   }
-  
-   printf("아이디 입력");
-   scanf("%d",&d);
-   
-   printf("재고 수량");
-   for(int i = 0; i<5;i++){
-       printf("%d ",b[i]-c[i]);
-   }
-   
-   
-  
+    int a = 0;
+    int b[5];
+    int c[5];
+    int d = 0;
+
+    printf("상품 개수 입력");
+    scanf_s("%d", &a);
+
+    printf("입고수량 입력");
+    for (int i = 0; i < 5; i++) {
+        scanf_s("%d", &b[i]);
+    }
+
+    printf("판매수량 입력");
+    for (int i = 0; i < 5; i++) {
+        scanf_s("%d", &c[i]);
+    }
+
+    printf("아이디 입력");
+    scanf_s("%d", &d);
+
+    printf("아이디에 맞는 재고수량\n%d\n",b[d]-c[d]);
+    
+
+    printf("재고 수량");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", b[i] - c[i]);
+    }
+
+
+
 }
