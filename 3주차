@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+int main()
+{
+    int a = 0;
+    int b[5];
+    int c[5];
+    int d = 0;   
+    float sale= 0;
+    float e = 0;
+    int n =1;
+    int m = 1;
+
+    printf("상품 개수 입력");
+    scanf("%d", &a);
+
+    printf("입고수량 입력");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &b[i]);
+    }
+
+    printf("판매수량 입력");
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &c[i]);
+    }
+
+    printf("아이디 입력");
+    scanf("%d", &d);
+
+    printf("아이디에 맞는 재고수량\n%d\n",b[d]-c[d]);
+    
+
+    printf("재고 수량");
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", b[i] - c[i]);
+    }
+    printf("\n");
+    for(int i = 0;i<5;i++) {
+        sale +=c[i];
+    }
+
+    for(int i = 0;i<5;i++) {
+       e += b[i];
+    }
+    double f =(sale/e)*100;
+   
+    printf("총 판매량 %.0f(판매율 %.2lf%) \n",sale,f);
+    
+    for(int i = 0;i<a;i++){
+        if(c[i]>c[n])
+        n = i;
+        if(c[i]<c[m])
+        m = i;
+    }
+    printf("가장 많이 팔린 상품 ID : %d, 판매량 : %d\n",n,c[n]);
+    printf("가장 적게 팔린 상품 ID : %d, 판매량 : %d",m,c[m]);
+    
+    for()
+    
+
+    
+
+
+
+}
