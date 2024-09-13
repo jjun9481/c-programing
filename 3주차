@@ -55,7 +55,14 @@ int main()
     printf("가장 많이 팔린 상품 ID : %d, 판매량 : %d\n",n,c[n]);
     printf("가장 적게 팔린 상품 ID : %d, 판매량 : %d",m,c[m]);
     
-    for()
+    for(int i=1;i<=a;i++)
+    {
+        if( b[i]-c[i]<=2)
+        printf("상품ID %d:재고부족(%d)\n",i,b[i]-c[i]);
+    }
+    
+    return 0;
+}
     
 
     
