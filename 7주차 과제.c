@@ -37,7 +37,7 @@ int main()
 		point[least] = point[i];
 		point[i] = temp;
 	}
-	printf("Á¤·Ä\n");
+	printf("ÃÂ¤Â·Ã„\n");
 	for (int i = 0; i < SIZE; i++)
 	{
 		printf("point[%3d]=(%3d,%3d)\n", i, point[i].x, point[i].y);
@@ -107,7 +107,7 @@ int main()
 	input_random_point(point, SIZE);
 	print_point_array(point, SIZE);
 	selection_sort_point(point, SIZE);
-	printf("Á¤·Ä\n");
+	printf("ÃÂ¤Â·Ã„\n");
 	print_point_array(point, SIZE);
 	return 0;
 }
