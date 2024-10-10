@@ -78,15 +78,15 @@ void inventoryStatus(int b[], int c[]) {
 void ProductName(char names[][20]) {
     for (int i = 0; i < 5; i++) {
         printf("ID %d 상품명: ", i + 1);
-        getchar(); // 버퍼 비우기
-        fgets(names[i], 20, stdin); // 문자열 입력
-        names[i][strcspn(names[i], "\n")] = '\0'; // 개행 문자 제거
+        getchar(); 
+        fgets(names[i], 20, stdin);
+        names[i][strcspn(names[i], "\n")] = '\0'; 
     }
 }
 
 int main() {
-    int b[5] = {0}; // 재고
-    int c[5] = {0}; // 판매량
+    int b[5] = {0};
+    int c[5] = {0};
 
     while (1) {
         int choice;
