@@ -1,46 +1,38 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <time.h>
 
-int calculate_d_day(int year, int month, int day) {
-    time_t t = time(NULL);
-    struct tm today = *localtime(&t);
-
-    struct tm target_date = {0};
-    target_date.tm_year = year - 1900; 
-    target_date.tm_mon = month - 1;   
-    target_date.tm_mday = day;
-    
-    time_t target_time = mktime(&target_date);
-
-    if (target_time == -1) {
-        return -1; 
-
-    time_t current_time = mktime(&today);
-
-    double difference = difftime(target_time, current_time) / (60 * 60 * 24);
-
-    return (int)difference;
-}
-
 int main() {
+    time_t current;
+    struct tm inputDate = { 0 };
+    struct tm* currentTimeInfo;
+    double secondsDiff;
+    int daysDiff;
+
+    current = time(NULL);
+    currentTimeInfo = localtime(&current);
+
     int year, month, day;
+    printf("Enter YYYY MM DD: ");
+    scanf("%d %d %d", &year, &month, &day);
 
-    printf("목표 날짜를 입력하세요 (YYYY MM DD): ");
-    if (scanf("%d %d %d", &year, &month, &day) != 3) {
-        printf("잘못된 입력입니다.\n");
-        return 1;
+    inputDate.tm_year = year - 1900; 
+    inputDate.tm_mon = month - 1;   
+    inputDate.tm_mday = day;
+
+    time_t inputTime = mktime(&inputDate);
+
+    secondsDiff = difftime(inputTime, current);
+    daysDiff = (int)(secondsDiff / (60 * 60 * 24));
+
+    if (daysDiff > 0) {
+        printf("D-%d\n", daysDiff);
     }
-
-    int d_day = calculate_d_day(year, month, day);
-
-    if (d_day == -1) {
-        printf("유효하지 않은 날짜입니다.\n");
-    } else if (d_day > 0) {
-        printf("D-%d\n", d_day);
-    } else if (d_day == 0) {
-        printf("D-Day\n");
-    } else {
-        printf("D+%d\n", -d_day);
+    else if (daysDiff == 0) {
+        printf("오늘\n");
+    }
+    else {
+        printf("D+%d\n", -daysDiff);
     }
 
     return 0;
